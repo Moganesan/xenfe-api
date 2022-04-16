@@ -15,7 +15,7 @@ app.use(express.static(path1));
 
 // const http = require('http')
 // // const hostname = '216.10.245.232';
-const hostname = "127.0.0.1";
+const hostname = "localhost";
 
 const port = 3000;
 

@@ -27,10 +27,9 @@ const bcrypt = require("bcryptjs");
 
 let conn = new Mysqli({
   Host: "localhost", // IP/domain name
-  post: 3306, // port, default 3306
-  user: "zonxo_admin",
-  password: "XARAadmin",
-  database: "zonxo_xenfe",
+  user: "root", // username
+  passwd: "mydb", // password
+  db: "zonxo",
 });
 
 // var con = mysql.createConnection({
