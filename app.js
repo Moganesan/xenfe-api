@@ -33,6 +33,19 @@ const port = 3000;
 //     res.send('hello world')
 //   })
 
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "POST, GET, PATCH, DELETE, OPTIONS"
+  );
+  next();
+});
+
 app.get("/", function (req, res) {
   res.sendFile(path1 + "index.html");
 });
@@ -81,19 +94,6 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
-
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "POST, GET, PATCH, DELETE, OPTIONS"
-  );
-  next();
-});
 
 app.use(logger("combined"));
 app.use(express.json());
