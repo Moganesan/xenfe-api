@@ -73,7 +73,14 @@ app.get("/", (req, res) => {
 
 /* CORS */
 
-app.use(cors({ credentials: true, origin: "*" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["*", "http://dev.zonxo.com/"],
+    credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  })
+);
 
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
